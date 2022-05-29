@@ -1,4 +1,11 @@
 <h1>新規登録</h1>
+
+<% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>  
+<% end %>
+
 <%= form_with model: @user, url: signup_path do |f| %>
   <p>
     <%= f.label :name %>
