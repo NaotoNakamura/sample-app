@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: ユーザー名
+        email: メール
+        password: パスワード
+        password_confirmation: パスワード（確認）
+  views:
+    pagination:
+      first: 最初
+      last: 最後
+      previous: 前
+      next: 次
+      truncate: ...
