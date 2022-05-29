@@ -5,13 +5,9 @@ services:
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
+    container_name: rails-devcontainer
     ports:
       - "3000:3000"
-    environment:
-      - "DATABASE_HOST=db"
-      - "DATABASE_PORT=5432"
-      - "DATABASE_USER=postgres"
-      - "DATABASE_PASSWORD=mysecretpassword1234"
     links:
       - db
     volumes:
@@ -19,9 +15,11 @@ services:
     stdin_open: true
 
   db:
-    image: postgres:10.1
+    image: postgres
+    container_name: rails-devcontainer
     ports:
       - "5432:5432"
+    volumes:
+      - ../tmp/db:/var/lib/postgresql/data
     environment:
-      - "POSTGRES_USER=postgres"
-      - "POSTGRES_PASSWORD=mysecretpassword1234"
+      POSTGRES_HOST_AUTH_METHOD: 'trust'
