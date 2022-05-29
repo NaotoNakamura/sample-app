@@ -5,7 +5,7 @@ services:
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
-    container_name: rails-devcontainer
+    container_name: sample-app-web
     ports:
       - "3000:3000"
     links:
@@ -16,7 +16,7 @@ services:
 
   db:
     image: postgres
-    container_name: rails-devcontainer
+    container_name: sample-app-db
     ports:
       - "5432:5432"
     volumes:
