@@ -12,4 +12,8 @@ module SessionsHelper
       @current_user ||= User.find_by(id: user_id)
     end
   end
+
+  def remember(user)
+    user.remember
+  end
 end

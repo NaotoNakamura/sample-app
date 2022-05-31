@@ -17,6 +17,13 @@
       </div>
 
       <div><%= f.submit "ログイン", class: "btn btn-primary" %></div>
+
+      <div>
+        <%= f.label :remember_me do %>
+          <%= f.check_box :remember_me %>
+            <span>次回から自動でログイン</span>
+        <% end %>
+      </div>
     <% end %>
 
     <p>まだ登録されていない方はこちらから <%= link_to "新規登録", signup_path %></p>
