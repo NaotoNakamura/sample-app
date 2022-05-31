@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :not_logged_in_user
   def new
   end
 
