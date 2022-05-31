@@ -14,8 +14,8 @@
     <div class="header">
       <ul>
         <% if logged_in? %>
-          <li>ユーザー名</li>
-          <li>ログアウト</li>
+          <li><%= link_to "こんにちは#{current_user.name}さん", current_user %></li>
+          <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "新規登録", signup_path %></li>
           <li><%= link_to "ログイン", login_path %></li>
