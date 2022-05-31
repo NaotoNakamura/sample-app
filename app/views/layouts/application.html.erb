@@ -13,10 +13,13 @@
   <body>
     <div class="header">
       <ul>
-        <li><%= link_to "新規登録", signup_path %></li>
-        <li><%= link_to "ログイン", login_path %></li>
-        <li>ユーザー名</li>
-        <li>ログアウト</li>
+        <% if logged_in? %>
+          <li>ユーザー名</li>
+          <li>ログアウト</li>
+        <% else %>
+          <li><%= link_to "新規登録", signup_path %></li>
+          <li><%= link_to "ログイン", login_path %></li>
+        <% end %>
       </ul>
     </div>
     <%= yield %>
