@@ -4,4 +4,8 @@
     name: "テストユーザー#{n + 1}",
     password: "password"
   )
+  Post.create!(
+    user_id: n + 1,
+    body: "これは#{n + 1}つめの投稿です。",
+  )
 end

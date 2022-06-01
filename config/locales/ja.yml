@@ -6,6 +6,8 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード（確認）
+      post:
+        body: 内容
   views:
     pagination:
       first: 最初

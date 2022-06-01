@@ -1,2 +1,19 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<h1>投稿</h1>
+
+<% flash.each do |message_type, message| %>
+  <div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
+
+<% if @post.errors.any? %>
+    <% @post.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>  
+<% end %>
+
+<%= form_with model: @post do |f| %>
+  <p>
+    <div><%= f.label :body %></div>
+    <div><%= f.text_area :body %></div>
+  </p>
+  <%= f.submit "投稿" %>
+<% end %>

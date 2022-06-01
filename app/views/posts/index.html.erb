@@ -1,2 +1,7 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<% @posts.each do |post| %>
+  <div><%= post.body %></div>
+  <div><%= post.created_at %></div>
+  <% if post.user_id == current_user.id %>
+    <%= link_to "削除", post_path(post), method: :delete, data: {confirm: "削除しますか？"}  %>
+  <% end %>
+<% end %>
