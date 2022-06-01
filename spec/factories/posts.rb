@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :post do
-    body { "MyText" }
-    user { nil }
+    body { Faker::Lorem.characters(number: 100) }
+    user
   end
 end
