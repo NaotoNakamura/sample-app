@@ -1,7 +1,9 @@
 <% @posts.each do |post| %>
-  <div><%= post.body %></div>
-  <div><%= post.created_at %></div>
+  <div>ユーザー：<%= post.user.name %></div>
+  <div>内容：<%= post.body %></div>
+  <div>日時：<%= post.created_at %></div>
   <% if post.user_id == current_user.id %>
     <%= link_to "削除", post_path(post), method: :delete, data: {confirm: "削除しますか？"}  %>
   <% end %>
+  <hr>
 <% end %>
