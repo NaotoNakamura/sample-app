@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   describe '#validate' do
-    let(:post) { create(:post) }
+    let(:post) { build_stubbed(:post) }
     context '全てのデータが正しいとき' do
       it '登録できること' do
         expect(post).to be_valid
