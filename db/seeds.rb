@@ -9,3 +9,15 @@
     body: "これは#{n + 1}つめの投稿です。",
   )
 end
+Relationship.create!(
+  follower_id: 1,
+  followed_id: 2,
+)
+Relationship.create!(
+  follower_id: 2,
+  followed_id: 1,
+)
+Relationship.create!(
+  follower_id: 1,
+  followed_id: 3,
+)

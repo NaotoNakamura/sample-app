@@ -1,5 +1,10 @@
 <% @posts.each do |post| %>
   <div>ユーザー：<%= post.user.name %></div>
+  <% if post.user != current_user && !current_user.following?(post.user) %>
+    <%= button_to 'フォロー', relationships_path, method: :post, params: {id: post.user_id} %>
+  <% else %>
+    <%= button_to 'フォローを外す', relationships_path(post.user), method: :delete %>
+  <% end %>
   <div>内容：<%= post.body %></div>
   <div>日時：<%= post.created_at %></div>
   <% if post.user_id == current_user.id %>
