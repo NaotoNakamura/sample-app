@@ -1,5 +1,8 @@
 class RelationshipsController < ApplicationController
   def index
+    # フォローユーザー一覧
+    # @user = 
+    # フォロワーユーザー一覧
   end
 
   def create
