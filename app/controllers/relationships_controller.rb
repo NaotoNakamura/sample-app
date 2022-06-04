@@ -1,11 +1,7 @@
 class RelationshipsController < ApplicationController
   def index
-    # params[:followings]
-    # params[:follows]
     user = User.find(params[:user_id])
-    # フォローユーザー一覧
     @user = user.followings
-    # フォロワーユーザー一覧
   end
 
   def create
