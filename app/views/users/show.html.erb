@@ -1,5 +1,5 @@
 <%= @user.name %>
 <div>
-フォロワー：<%= @user.followers.count %>
-フォロー：<%= @user.followings.count %>
+フォロワー：<%= link_to "#{@user.followers.count}", user_relationships_path(@user) %>
+フォロー：<%= link_to "#{@user.followings.count}", user_relationships_path(@user) %>
 </div>
