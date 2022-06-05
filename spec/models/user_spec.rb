@@ -39,4 +39,41 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe '#relationships' do
+    let(:current_user) { create(:user) }
+    let(:user) { create(:user) }
+    context 'フォローするユーザーとフォローされるユーザーが異なるとき' do
+      it 'フォローできること' do
+        expect(current_user.follow(user)).to be_valid
+      end
+    end
+
+    context 'フォローするユーザーとフォローされるユーザーが同じとき' do
+      it 'フォローできないこと' do
+        current_user.follow(current_user)
+        expect(current_user.followings.include?(current_user)).to be_falsey 
+      end
+    end
+
+    context 'ユーザーをフォローしているとき' do
+      it 'フォロー解除できること' do
+        current_user.follow(user)
+        expect(current_user.unfollow(user)).to be_valid
+      end
+    end
+
+    context 'フォロー中のユーザーが存在するとき' do
+      it 'trueになること' do
+        current_user.follow(user)
+        expect(current_user.following?(user)).to be_truthy
+      end
+    end
+
+    context 'フォロー中のユーザーが存在しないとき' do
+      it 'falseになること' do
+        expect(current_user.following?(user)).to be_falsey 
+      end
+    end
+  end
 end
