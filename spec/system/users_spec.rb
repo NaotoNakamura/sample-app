@@ -85,15 +85,42 @@ RSpec.describe User, type: :system do
   end
 
   describe 'ログイン後' do
+    before { login(user) }
     context 'root_pathにアクセスしたとき' do
+      it 'ホーム画面にアクセスできること' do
+        visit root_path
+        expect(current_path).to eq root_path
+      end
     end
     context '新規投稿画面にアクセスしたとき' do
+      it '新規投稿画面にアクセスできること' do
+        visit new_post_path
+        expect(current_path).to eq new_post_path
+      end
     end
     context 'ユーザー詳細画面にアクセスしたとき' do
+      it 'ユーザー詳細画面にアクセスできること' do
+        visit user_path(user)
+        expect(current_path).to eq user_path(user)
+      end
     end
     context '新規ユーザー登録画面にアクセスしたとき' do
+      it 'ホーム画面にリダイレクトされること' do
+        visit signup_path
+        expect(current_path).to eq root_path
+      end
     end
     context 'ログイン画面にアクセスしたとき' do
+      it 'ホーム画面にリダイレクトされること' do
+        visit login_path
+        expect(current_path).to eq root_path
+      end
+    end
+    context 'ログアウトリンクをクリックしたとき' do
+      it 'ログイン画面にリダイレクトされること' do
+        click_link 'ログアウト'
+        expect(current_path).to eq login_path
+      end
     end
   end
 end
