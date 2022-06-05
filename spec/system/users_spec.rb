@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe User, type: :system do
   let!(:user) { create(:user, id: 1, email: 'test@example.com') }
-  let(:other_user) { create(:user) }
   describe 'ログイン前' do
     context '新規登録フォームの入力値が正常なとき' do
       it '新規登録に成功すること' do
