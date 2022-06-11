@@ -5,7 +5,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = PostDecorator.decorate_collection(Post.all.page(params[:page]).per(10))
+    # @posts = PostDecorator.decorate_collection(Post.all.page(params[:page]).per(10))
+    @posts = Post.all.page(params[:page]).per(10)
   end
 
   def show
