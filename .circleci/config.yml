@@ -27,7 +27,7 @@ jobs:
         name: "db"
         environment:
           POSTGRES_USER: postgres
-          POSTGRES_DB: sample-app_test
+          POSTGRES_DB: app_test
           POSTGRES_PASSWORD: ""
     environment:
       BUNDLE_JOBS: "4"
