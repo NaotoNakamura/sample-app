@@ -84,6 +84,9 @@ GEM
     childprocess (4.1.0)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
+    debase (0.2.4.1)
+      debase-ruby_core_source (>= 0.10.2)
+    debase-ruby_core_source (0.10.16)
     diff-lcs (1.5.0)
     draper (4.0.2)
       actionpack (>= 5.0)
@@ -92,6 +95,8 @@ GEM
       activesupport (>= 5.0)
       request_store (>= 1.0)
       ruby2_keywords
+    enumerize (2.5.0)
+      activesupport (>= 3.2)
     erubi (1.10.0)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
@@ -205,6 +210,8 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.11.0)
+    ruby-debug-ide (0.7.3)
+      rake (>= 0.8.1)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
@@ -268,7 +275,9 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  debase
   draper
+  enumerize
   factory_bot_rails
   faker
   jbuilder (~> 2.7)
@@ -280,6 +289,7 @@ DEPENDENCIES
   rails (~> 6.1.5, >= 6.1.5.1)
   rails-i18n
   rspec-rails
+  ruby-debug-ide
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
   spring

@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  extend Enumerize
   has_many :posts, dependent: :destroy
 
   has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
@@ -14,6 +15,11 @@ class User < ApplicationRecord
   uniqueness: true
   validates :password, presence: true, length: { minimum: 6 }
   has_secure_password
+  enumerize :gender, in: {
+    none: 0,
+    male: 1,
+    female: 2,
+  }
 
   def remember
     self.remember_token = User.new_token

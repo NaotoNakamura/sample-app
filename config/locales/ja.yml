@@ -15,3 +15,9 @@ ja:
       previous: 前
       next: 次
       truncate: ...
+  enumerize:
+    user:
+      gender:
+        none: ---
+        male: 男
+        female: 女

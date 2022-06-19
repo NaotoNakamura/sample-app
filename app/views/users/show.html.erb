@@ -3,3 +3,6 @@
 フォロワー：<%= link_to "#{@user.followers.count}", user_relationships_path(@user) %>
 フォロー：<%= link_to "#{@user.followings.count}", user_relationships_path(@user) %>
 </div>
+<div>
+<%= link_to "ユーザー情報を編集する", edit_user_path(current_user) %>
+</div>
