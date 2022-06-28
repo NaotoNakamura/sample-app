@@ -23,7 +23,7 @@ jobs:
     docker:
       - image: cimg/ruby:2.7.4-node
       - image: cimg/go:1.17
-      - image: cimg/postgres:14.2.0
+      - image: cimg/postgres:14.2
         name: "db"
         environment:
           POSTGRES_USER: postgres
