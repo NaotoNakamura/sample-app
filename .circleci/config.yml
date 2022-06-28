@@ -1,8 +1,8 @@
 version: 2.1
 
 orbs:
-  ruby: circleci/ruby@1.1.2
-  node: circleci/node@2
+  ruby: circleci/ruby@1.8.0
+  node: circleci/node@5.0.2
 
 # setup
 commands:
@@ -12,7 +12,6 @@ commands:
       - ruby/install-deps
       - node/install-packages:
           pkg-manager: yarn
-          cache-key: "yarn.lock"
 
 jobs:
   build:
@@ -23,7 +22,8 @@ jobs:
   test:
     docker:
       - image: cimg/ruby:2.7.4-node
-      - image: circleci/postgres:11.6-alpine
+      - image: cimg/go:1.17
+      - image: cimg/postgres:14.2
         name: "db"
         environment:
           POSTGRES_USER: postgres
