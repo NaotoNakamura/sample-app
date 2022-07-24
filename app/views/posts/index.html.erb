@@ -10,6 +10,7 @@
     <%= post.user.following?(current_user) ? "フォローされています" : "" %>
   <% end %>
   <div>内容：<%= post.body %></div>
+  <% if post.picture.attached? %><%= image_tag post.picture %><% end %>
   <div>日時：<%= post.created_at %></div>
   <% if post.user_id == current_user.id %>
     <%= link_to "削除", post_path(post), method: :delete, data: {confirm: "削除しますか？"}  %>
