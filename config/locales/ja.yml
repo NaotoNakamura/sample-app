@@ -1,4 +1,7 @@
 ja:
+  flash:
+    please_login: "ログインしてください"
+    profile_updated: "ユーザー情報を更新しました"
   activerecord:
     attributes:
       user:

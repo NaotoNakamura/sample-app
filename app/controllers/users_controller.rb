@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = t 'flash.profile_updated'
       redirect_to @user
     else
       render 'new'
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     redirect_to root_path unless current_user?(@user)
     if @user.update(user_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = t 'users.profile.success'
       redirect_to @user
     else
       render 'edit'
@@ -38,7 +38,8 @@ class UsersController < ApplicationController
   end
 
   private
-    def user_params
-      params.require(:user).permit(:name, :email, :gender, :password, :password_confirmation)
-    end
+
+  def user_params
+    params.require(:user).permit(:name, :email, :gender, :password, :password_confirmation)
+  end
 end
