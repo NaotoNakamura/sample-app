@@ -19,7 +19,7 @@ jobs:
       - image: cimg/ruby:2.7.4-node
     steps:
       - setup
-  test:
+  rspec:
     docker:
       - image: cimg/ruby:2.7.4-node
       - image: cimg/postgres:14.2
@@ -55,6 +55,6 @@ workflows:
   test_and_deploy:
     jobs:
       - build
-      - test:
+      - rspec:
           requires:
             - build

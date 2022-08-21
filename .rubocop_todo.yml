@@ -48,14 +48,6 @@ Layout/EmptyLinesAroundClassBody:
 
 # Offense count: 4
 # This cop supports safe autocorrection (--autocorrect).
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: normal, indented_internal_methods
-Layout/IndentationConsistency:
-  Exclude:
-    - 'app/controllers/posts_controller.rb'
-
-# Offense count: 4
-# This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: Width, AllowedPatterns, IgnoredPatterns.
 Layout/IndentationWidth:
   Exclude:
@@ -290,3 +282,11 @@ Style/WordArray:
 # URISchemes: http, https
 Layout/LineLength:
   Max: 198
+
+Rails/HelperInstanceVariable:
+  Exclude:
+    - 'app/helpers/sessions_helper.rb'
+
+Rails/FilePath:
+  Exclude:
+    - 'config/environments/development.rb'
