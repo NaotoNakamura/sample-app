@@ -61,6 +61,7 @@ RSpec.describe User, type: :model do
     context 'ユーザーをフォローしているとき' do
       it 'フォロー解除できること' do
         current_user.follow(user)
+        p current_user.following?(user)
         expect(current_user.unfollow(user)).to be_valid
       end
     end
