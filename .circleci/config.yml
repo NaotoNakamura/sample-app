@@ -19,6 +19,13 @@ jobs:
       - image: cimg/ruby:2.7.4-node
     steps:
       - setup
+  rubocop:
+    docker:
+      - image: cimg/ruby:2.7.4-node
+    steps:
+      - run:
+          name: Rubocop
+          command: bundle exec rubocop
   rspec:
     docker:
       - image: cimg/ruby:2.7.4-node
@@ -43,9 +50,6 @@ jobs:
       - run:
           name: Database setup
           command: bundle exec rails db:schema:load --trace
-      - run:
-          name: Rubocop
-          command: bundle exec rubocop
       - run:
           name: Rspec
           command: bundle exec rspec
