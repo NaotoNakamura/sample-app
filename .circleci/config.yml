@@ -59,6 +59,7 @@ workflows:
   test_and_deploy:
     jobs:
       - build
+      - rubocop
       - rspec:
           requires:
             - build
