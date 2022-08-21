@@ -60,6 +60,8 @@ workflows:
     jobs:
       - build
       - rubocop
+          requires:
+            - build
       - rspec:
           requires:
             - build
