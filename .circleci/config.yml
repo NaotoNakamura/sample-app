@@ -23,6 +23,7 @@ jobs:
     docker:
       - image: cimg/ruby:2.7.4-node
     steps:
+      - setup
       - run:
           name: Rubocop
           command: bundle exec rubocop
